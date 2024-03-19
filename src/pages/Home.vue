@@ -38,6 +38,7 @@ import TaskForm from '../components/TaskForm.vue'
 import TaskItem from '../components/TaskItem.vue';
 const tastArray = useTaskStore()
 const filter = ref('all')
+const Active  = ref(true)
 tastArray.getTask()
 
 
@@ -48,6 +49,9 @@ tastArray.getTask()
 <style scoped>
 .fa-heart.active{
     color: red;
+}
+.btn.active{
+    background-color: red;
 }
 
 

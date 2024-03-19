@@ -5,7 +5,13 @@ export default {
   theme: {
     extend: {
       colors:{
-        jamshid: "#000"
+        primary: {
+          DEFAULT: "#6941c6",
+          300: "#D6BBFB",
+          500: "#6941c6",
+          600: "#7F56D9",
+          700: "#6941C6",
+        },
       }
     },
   },

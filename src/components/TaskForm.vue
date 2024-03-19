@@ -1,12 +1,15 @@
 <template>
     <form @submit.prevent="handlerSubmit" class="flex gap-2 mt-3">
-        <input 
+        <el-input 
         type="text"
-        class=" w-full border rounded-md border-cyan-700 px-3 h-11"
+        class="input min-w-[400px] h-[80px] placeholder-red-500 text-blue-600"
         placeholder="I need to ..."
         v-model="newTask"
-        >
-        <button class=" bg-black h-11 w-16 rounded-md text-white">Add</button>
+        clearable
+        />
+        <el-button type="danger" class="btn">
+            Add
+        </el-button>
     </form>
 </template>
 
@@ -30,6 +33,9 @@ const handlerSubmit = () => {
 }
 </script>
 
-<style scoped>
-
-</style>../stores/TaskStore
+<style scoped lang="css">
+    .btn{
+        height: 45px;
+    }
+    
+</style>
