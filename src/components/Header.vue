@@ -35,13 +35,31 @@ const tastArray = useTaskStore()
                     </li>
                 </RouterLink>
             </ul>
-            <div>
-                <el-icon>
-                    <LocationFilled/>
-                </el-icon>
-                <button class=" bg-indigo-500 h-8 w-16 rounded-md text-white">
-                    {{ tastArray.favsCount }} favs 
-                </button>
+            <div class=" flex gap-4 items-center">
+                <div class=" gap-10 flex items-center">
+                    <div class=" flex gap-2 items-center">
+                        <div class=" bg-primary-300  w-8 h-8 rounded-full flex items-center justify-center cursor-pointer">
+                            <i class="fa-solid fa-location-dot  text-primary"></i>
+                        </div>
+                        <div class=" cursor-pointer flex-col ">
+                            <p class=" text-sm mb-0">yoki Yetkazib berish Olib ketish</p>
+                            <p class=" text-sm text-primary">Qabul qilib olish turini tanlang</p>
+                        </div>
+                    </div>
+                    <div class=" w-16 h-8 bg-primary-300 flex items-center gap-1 px-2 py-1 rounded-[9rem] justify-between cursor-pointer">
+                        <img src="../assets/images/uzb-flag.png" alt="flag" class=" w-6">
+                        <i class="fa-solid fa-chevron-down text-primary text-sm font-semibold"></i>
+                    </div>
+                </div>
+                <div class=" flex items-center justify-between gap-4 cursor-pointer">
+                    <div class=" w-8 h-8 bg-primary-300 flex items-center rounded-full justify-center cursor-pointer">
+                        <i class="fa-solid fa-cart-shopping text-primary text-sm font-semibold"></i>
+                    </div>
+                    <span>{{ tastArray.favsCount }} so'm </span>
+                </div>
+                <div class=" w-8 h-8 bg-primary-300 flex items-center rounded-full justify-center cursor-pointer">
+                    <i class="fa-solid fa-user text-primary text-sm font-semibold"></i>
+                </div>
             </div>
         </nav>
     </div> 
