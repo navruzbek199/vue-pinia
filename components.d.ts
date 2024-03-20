@@ -8,10 +8,12 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     Advertising: typeof import('./src/components/Advertising.vue')['default']
+    Category: typeof import('./src/components/Category.vue')['default']
     ElButton: typeof import('element-plus/es')['ElButton']
     ElIcon: typeof import('element-plus/es')['ElIcon']
     ElInput: typeof import('element-plus/es')['ElInput']
     Header: typeof import('./src/components/Header.vue')['default']
+    Products: typeof import('./src/components/Products.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TaskForm: typeof import('./src/components/TaskForm.vue')['default']

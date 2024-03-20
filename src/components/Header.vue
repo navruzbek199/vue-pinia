@@ -1,8 +1,13 @@
 <script setup lang='ts'>
 import { RouterLink } from 'vue-router';
 import { useTaskStore } from '../stores/TaskStore';
+import { ref } from 'vue';
 const tastArray = useTaskStore()
-
+const dropdown = ref(true)
+const check = ref('active')
+const onHandleDropdown = () => {
+    dropdown.value = !dropdown.value
+}
 </script>
 
 
@@ -46,9 +51,33 @@ const tastArray = useTaskStore()
                             <p class=" text-sm text-primary">Qabul qilib olish turini tanlang</p>
                         </div>
                     </div>
-                    <div class=" w-16 h-8 bg-primary-300 flex items-center gap-1 px-2 py-1 rounded-[9rem] justify-between cursor-pointer">
+                    <div class=" relative w-16 h-8 bg-primary-300 flex items-center gap-1 px-2 py-1 rounded-[9rem] justify-between cursor-pointer" @click="onHandleDropdown">
                         <img src="../assets/images/uzb-flag.png" alt="flag" class=" w-6">
-                        <i class="fa-solid fa-chevron-down text-primary text-sm font-semibold"></i>
+                        <i class="fa-solid fa-chevron-down text-primary text-sm font-semibold" v-if="dropdown"></i>
+                        <i class="fa-solid fa-chevron-up text-primary text-sm font-semibold" v-else="dropdown"></i>
+                        <div v-if="!dropdown" class=" absolute w-[232px] h-[176px] grid gap-3 px-2 py-3 top-[57px] right-0 bg-white rounded-md">
+                            <div class=" hover:bg-primary-300 w-full px-[16px] py-[8px] flex items-center justify-between gap-5 cursor-pointer rounded-md"  @click="check === 'active'">
+                                <div class=" flex items-center gap-3">
+                                    <img src="../assets/images/uzb-flag.png" alt="flag" class=" w-6">
+                                    <span>Uzbek</span>
+                                </div>
+                                <i v-if="check === 'active'" class="fa-solid fa-check text-primary"></i>
+                            </div>
+                            <div class=" hover:bg-primary-300 w-full px-[16px] py-[8px] flex items-center justify-between gap-5 cursor-pointer rounded-md"  @click="check === 'active1'">
+                                <div class="flex items-center gap-3">
+                                    <img src="../assets/images/uzb-flag.png" alt="flag" class=" w-6">
+                                    <span>Russian</span>
+                                </div>
+                                <i v-if="check === 'active1'" class="fa-solid fa-check text-primary"></i>
+                            </div>
+                            <div class=" hover:bg-primary-300 w-full px-[16px] py-[8px] flex items-center justify-between gap-5 cursor-pointer rounded-md"  @click="check === 'active2'">
+                                <div class="flex items-center gap-3">
+                                    <img src="../assets/images/uzb-flag.png" alt="flag" class=" w-6">
+                                    <span>English</span>
+                                </div>
+                                <i v-if="check === 'active2'" class="fa-solid fa-check text-primary"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class=" flex items-center justify-between gap-4 cursor-pointer">
