@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.wrapper{
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+
+
+.el-form {
+  .el-form-item {
+    &.is-required:not(.is-no-asterisk).asterisk-right
+      > .el-form-item__label::after {
+      margin-left: 2px;
+      color: #181c25;
+    }
+
+    &__label {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+
+      /* identical to box height */
+
+      color: #333333;
+    }
+
+    .el-input {
+      &--large {
+        height: 54px !important;
+      }
+    }
+  }
+}

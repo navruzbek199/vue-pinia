@@ -2,11 +2,16 @@
 import { RouterLink } from 'vue-router';
 import { useTaskStore } from '../stores/TaskStore';
 import { ref } from 'vue';
+import { useRouter } from 'vue-router'
 const tastArray = useTaskStore()
 const dropdown = ref(true)
 const check = ref('active')
+const router = useRouter()
 const onHandleDropdown = () => {
     dropdown.value = !dropdown.value
+}
+const auth = () => {
+    router.push('/auth')
 }
 </script>
 
@@ -16,27 +21,27 @@ const onHandleDropdown = () => {
     <div class=" bg-white border-b">
         <nav class="wrapper h-20 flex justify-between items-center w-full">
             <ul class=" flex items-center gap-x-8">
-                <div class=" w-10">
+                <a href="/" class=" w-10">
                     <img src="../assets/images/logo.jpeg" alt="icon" srcset="">
-                </div>
+                </a>
                 <RouterLink :to="{name: 'home'}" class="router-link">
                     <li class=" text-base cursor-pointer ">
                         Home
                     </li>
                 </RouterLink>
-                <RouterLink :to="{name: 'filial'}" class="router-link">
+                <RouterLink :to="{name: 'product'}" class="router-link">
                     <li class=" text-base cursor-pointer ">
-                        Filiallar
+                        Products
                     </li>
                 </RouterLink>
                 <RouterLink :to="{name: 'about'}" class="router-link">
                     <li class=" text-base cursor-pointer ">
-                        Biz haqimizda
+                        About
                     </li>
                 </RouterLink>
                 <RouterLink :to="{name: 'contact'}" class="router-link">
                     <li class=" text-base cursor-pointer ">
-                        Bog'lanish
+                        Contact
                     </li>
                 </RouterLink>
             </ul>
@@ -87,13 +92,15 @@ const onHandleDropdown = () => {
                     <span>{{ tastArray.favsCount }} so'm </span>
                 </div>
                 <div class=" w-8 h-8 bg-primary-300 flex items-center rounded-full justify-center cursor-pointer">
-                    <i class="fa-solid fa-user text-primary text-sm font-semibold"></i>
+                    <i class="fa-solid fa-user text-primary text-sm font-semibold" @click="auth"></i>
                 </div>
             </div>
         </nav>
     </div> 
 </template>
-    
+
+
+≈
     
 <style scoped lang="scss">
     .router-link{

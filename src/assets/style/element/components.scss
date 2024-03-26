@@ -1,0 +1,214 @@
+@import "../colors.scss";
+
+// Table
+.el-table--striped {
+  font-size: 14px;
+  line-height: 17px;
+  text-align: justify;
+
+  th {
+    border: none !important;
+    font-weight: 500;
+    background-color: $primary !important;
+    color: #fff;
+  }
+
+  tr.el-table__row--striped {
+    &:hover {
+      td {
+        background: #f6f7f9 !important;
+      }
+    }
+
+    td {
+      background: #f6f7f9 !important;
+      color: #282e36;
+    }
+  }
+}
+
+tr.noHover {
+  &:hover {
+    td {
+      background-color: white !important;
+    }
+  }
+}
+
+.el-pagination {
+  display: flex;
+  justify-content: space-between;
+
+  .btn-next,
+  .btn-prev {
+    border: 1px solid #d0d5dd;
+    border-radius: 8px;
+    background-color: #fff !important;
+    padding: 12px 12px;
+    font-size: 13.801px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 19.716px;
+  }
+
+  ul.el-pager {
+    li {
+      color: #182230 !important;
+      font-size: 13.801px !important;
+      padding: var(--spacing-md) !important;
+      font-weight: 500 !important;
+      line-height: 19.716px !important;
+      background-color: #fff !important;
+      border-radius: var(--radius-md) !important;
+    }
+
+    .is-active {
+      background-color: #f9fafb !important;
+    }
+  }
+}
+// Form
+.el-form {
+  .el-form-item {
+    &.is-required:not(.is-no-asterisk).asterisk-right
+      > .el-form-item__label::after {
+      margin-left: 2px;
+      color: #181c25;
+    }
+
+    &__label {
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 21px;
+
+      /* identical to box height */
+
+      color: #333333;
+    }
+
+    .el-input {
+      &--large {
+        height: 54px !important;
+      }
+    }
+  }
+}
+
+.medium {
+  height: 40px !important;
+
+  .el-input {
+    &--suffix {
+      height: 40px !important;
+    }
+  }
+}
+
+.whiteBordered {
+  border-radius: 8.116px;
+  border: 0.812px solid #b8b8b8;
+  box-shadow: 0px 3.2462525367736816px 3.2462525367736816px 0px
+    rgba(0, 0, 0, 0.25);
+  font-size: 12px !important;
+  font-weight: 600 !important;
+
+  .el-table__cell {
+    padding: 14px 0px !important;
+  }
+
+  th {
+    color: #44444f;
+    font-size: 12px;
+    font-weight: 600;
+    border: none !important;
+  }
+
+  &.nofirst {
+    tr {
+      cursor: pointer;
+
+      &:hover {
+        td {
+          background: var(--dash-board-h-8, #e9d7fe) !important;
+        }
+      }
+
+      td {
+        color: #6941c6 !important;
+
+        &:first-child {
+          border-right: none !important;
+        }
+      }
+    }
+  }
+
+  tr {
+    border: none !important;
+
+    td {
+      border-top: 1px solid #d3d3d3;
+      color: #000 !important;
+
+      &:first-child {
+        border-right: 1px solid #d3d3d3 !important;
+      }
+    }
+  }
+}
+
+.whiteStripe {
+  border-radius: 14px;
+  border: 1px solid #eaecf0;
+  background: #fff;
+  overflow-x: auto;
+
+  /* Shadows/shadow-xs */
+  box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
+
+  .el-table__body {
+    overflow: hidden;
+  }
+  .el-table__cell {
+    padding: 14px 0px !important;
+  }
+
+  th {
+    color: #475467 !important;
+    font-size: 12px;
+    font-weight: 500;
+    border: none !important;
+    border-bottom: #f8f8f8;
+    background-color: #f8f8f8 !important;
+  }
+
+  tr {
+    border: none !important;
+
+    td {
+      border: none !important;
+      border-top: 1px solid #eaecf0 !important;
+      color: #475467 !important;
+      font-size: 14px !important;
+    }
+  }
+  tr:hover {
+    td {
+      background-color: white !important;
+    }
+  }
+  .hover-row > td {
+    background-color: white !important;
+  }
+}
+
+.light-form {
+  .is-disabled .el-input__wrapper {
+    background-color: #fff !important;
+  }
+}
+
+.action-button {
+  width: 36px !important;
+  height: 36px !important;
+}

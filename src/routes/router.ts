@@ -1,9 +1,9 @@
 import * as vR from "vue-router";
 import Home from "../pages/Home.vue";
-// import Product from "../pages/Product.vue";
-import Filial from "../pages/Filial.vue";
 import About from "../pages/About.vue";
 import Contact from "../pages/Contact.vue";
+import Product from "../pages/Product.vue";
+import Auth from "../pages/auth.vue";
 const _routes: Array<vR.RouteRecordRaw> = [
   {
     path: "/",
@@ -11,14 +11,19 @@ const _routes: Array<vR.RouteRecordRaw> = [
     component: Home,
   },
   {
-    path: "/filial",
-    name: "filial",
-    component: Filial,
+    path: "/product",
+    name: "product",
+    component: Product,
   },
   {
     path: "/about",
     name: "about",
     component: About,
+  },
+  {
+    path: "/auth",
+    name: "auth",
+    component: Auth,
   },
   {
     path: "/contact",
